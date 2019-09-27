@@ -6,7 +6,7 @@
 ## 0x04 loadg (2 byte oprand - short ``num``) access global variable number ``num`` and push it to the top of the op-stack
 ## 0x05 storeg (2 byte oprand - short ``num``) remove the top of the op-stack and change the global variable ``num`` into it
 ## 0x06 local_function (2 byte oprand - short ``num``) access the function stored in the item ``num`` in the ``.impl`` segment
-## 0x07 add (0 byte oprand) pop the top 2 items of the op-stack, add'em together and push the result back
+## 0x07 add (0 byte oprand) pop the top 2 items of the op-stack, add them together and push the result back
 ## 0x08 sub (0 byte oprand) pop the top item ``i``, and pop the following top item ``j``, and push ``j - i`` back
 ## 0x09 mul (0 byte oprand) pop the top 2 items of the op-stack, multiply'em together and push the result back
 ## 0x0a div (0 byte oprand) pop the top item ``i``, and pop the following top item ``j``, and push ``j / i`` back (notice that the result is an integer, like C convention ``3 / 2 = 1`` rather than ``3 / 2 = 1.49999999999`` in Python)
