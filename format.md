@@ -24,10 +24,12 @@ I will call these infos from ``i[0]`` to ``i[k]`` in which ``k >= $L - 1``, so i
 The info ``i[j]`` will consume 4 bytesof file space storing that integer.
 ### 3.0.1 When ``d[j]`` equals ``0x66``
 #### 3.0.1.0 Local variable count (2 bytes)
-This ``unsigned short`` will decide how many bytes we will allocated when that function's stack frame is allocated.
-#### 3.0.1.1 Instruction count (4 bytes) ($C[j])
+This ``unsigned short`` will decide how many bytes we will allocate when that function's stack frame is allocated.
+#### 3.0.1.1 Parameter count (2 bytes)
+This ``unsigned short`` will decide how many parameters we will read when that function's called.
+#### 3.0.1.2 Instruction count (4 bytes) ($C[j])
 This ``unsigned int`` will decide how many bytes the VM will read next as the function's instruction part when allocating the function object. 
-#### 3.0.1.2 Instruction list
+#### 3.0.1.3 Instruction list
 These will be a list of instructions with a size of ``$C[j]``, where instructions made of opcodes (1 byte) and optional oprands (4 bytes) comes side by side without a single bit of separation. 
 # 4 Here we go
 This is the full format of a ``Varize 1`` bytecode file. New opcodes and oprands will be added later on so I said ``Varize 1``. For example, ``d[m] = 'c'`` might come when classes and interfaces join the party in ``Varize 2``, and ``synchronize_obj`` and ``release_lock`` instruction will be given birth in the planning ``Multi-thread Update``, which might come in ``Varize 4``. The ``static`` block for module initialization will be on his/her way here with the ``.stat`` segment in ``Varize 3``. Nothing stays eternal and unchanging in this universe, including the potential base of future programming! 
