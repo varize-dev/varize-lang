@@ -3,8 +3,15 @@ This is a completely new programming language called ``Varize``. You can find th
 # Version
 Up till now, varize is still developing, there is no releases, sorry. :-(
 # Download
-You can download in the release part of this repository for the release verison of ``Varize``.
+## Stable Version
+You can download in the [release](https://github.com/varize-dev/varize/releases) part of this repository for stable verisons of ``Varize``.
+## Latest version
+You may get the latest devlop verison of ``Varize`` by downloading the zip file of this repository.
 
-Also, you may get the latest devlop verison of ``Varize`` by downloading the zip file of this repository.
+Or, you can run this code
+```
+git clone https://github.com/varize-dev/varize.git
+gcc varize.c -o varize
+```
 # Copyright
 We give up all the copyrights, including the wiki, the codes and the documents, etc. If you contribute by any means, you are also giving up your copyright. Thank you!
