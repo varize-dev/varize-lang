@@ -1,10 +1,10 @@
 #ifndef JUDGE_SYSTEM_H
 #define JUDGE_SYSTEM_H
-#if defined(__linux__) || defined(__linux)  // Linux
+#if defined(__linux__) || defined(__linux) /* Linux */
 #define OS_LINUX
 #elif !defined(SAG_COM) &&                                                     \
     (!defined(WINAPI_FAMILY) || WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP) && \
-    (defined(WIN64) || defined(_WIN64) || defined(__WIN64__))  // Windows
+    (defined(WIN64) || defined(_WIN64) || defined(__WIN64__)) /* Windows */
 #define OS_WIN32
 #define OS_WIN64
 #elif !defined(SAG_COM) && (defined(WIN32) || defined(_WIN32) || \
