@@ -8,7 +8,7 @@ You can download in the [release](https://github.com/varize-dev/varize/releases)
 ## Latest version
 You may get the latest devlop verison of ``Varize`` by downloading the zip file of this repository.
 
-Or, you can run this code
+Or, you can just run this code
 ```
 git clone https://github.com/varize-dev/varize.git
 gcc varize.c -o varize
