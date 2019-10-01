@@ -63,6 +63,9 @@ char *writeDeclInfo(FILE* stream, short num, char *data)
 	case 'f':
 		stype = "function";
 		break;
+	case 'n':
+		stype = "native";
+		break;
 	}
 	fprintf(stream, "#%d %s: %s\n", num, stype, data + 1);
 	int len = strlen(data + 1);
@@ -97,7 +100,7 @@ char INSTRUCTION_LENGTH[] =
 	// printf("called\n");
 	int len = 0;
 	len += 1;
-	// printf("%x", data[0]);
+	// printf("%c end\n", data[0]);
 	if ('i' == data[0])
 	{
 		fprintf(stream, "#%d: integer %d\n", num, *((int *) (data + 1)));
@@ -127,7 +130,6 @@ char INSTRUCTION_LENGTH[] =
 			start += 1;
 			int l = INSTRUCTION_LENGTH[instruction];
 			len += l;
-			off += l;
 			int val;
 			switch (l)
 			{
@@ -143,7 +145,15 @@ char INSTRUCTION_LENGTH[] =
 			if (l == 1) fprintf(stream, "Offset %x: %s\n", off, INSTRUCTION_MAPPING[instruction]);
 			else fprintf(stream, "Offset %x: %s %x\n", off, INSTRUCTION_MAPPING[instruction], val);
 			start += (l - 1);
+			off += l;
 		}
+	}
+	if ('n' == data[0])
+	{
+		// printf("Hello?\n");
+		fprintf(stream, "#%d: native\n", num);
+		fprintf(stream, "%d parameters\n", *((short *) (data + 1)));
+		len += 2;
 	}
 	return data + len;
 }
