@@ -11,12 +11,11 @@
 #include <stdio.h>
 #include "outputs.h"
 
-void view(const char *fname)
-{
-	FILE *infp = fopen(fname, "rb");
-	FILE *stream = stdout;
-	writeViewResult(infp, stream);
-	fclose(infp);
+void view(const char *fname) {
+  FILE *infp = fopen(fname, "rb");
+  FILE *stream = stdout;
+  writeViewResult(infp, stream);
+  fclose(infp);
 }
 
 #endif /* COMPILER_VIEWER_VIEWER_H_ */
