@@ -1,3 +1,4 @@
+# VARIZE IS NOT OFFICIALLY DISCONTINUED
 # About
 This is a completely new programming language called ``Varize``. You can find the description of the version in its folder.
 # Version
